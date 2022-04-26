@@ -11,7 +11,7 @@ local civduty = 'furiousfoxgg.civ.toggle'
 -- Editing stuff below this line will be at your own risk
 
 --add blip and (duty)
-RegisterCommand("duty",function(source, args)
+RegisterCommand(Config.Duty_Command, function(source, args)
   local name = GetPlayerName(source) -- Gets player name
   if IsPlayerAceAllowed(source, duty) and has_value(people, name) then
     TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You are now off-duty toggling blips!'}) --make sure you have the mythic_notify resource @ https://github.com/JayMontana36/mythic_notify
@@ -31,7 +31,7 @@ RegisterCommand("duty",function(source, args)
 end)
 
 --You can use this if you have a certified civillian department in your server
-RegisterCommand("civ",function(source, args)
+RegisterCommand(Config.Civ_Duty_Command, function(source, args)
   local name = GetPlayerName(source) -- Gets player name
   if IsPlayerAceAllowed(source, civduty) and has_value(people, name) then
     TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You are now off-duty as a Civ!'}) --make sure you have the mythic_notify resource @ https://github.com/JayMontana36/mythic_notify
@@ -46,7 +46,7 @@ RegisterCommand("civ",function(source, args)
     end
 end)
 
-RegisterCommand("emsduty", function(source, args)
+RegisterCommand(Config.EMS_Duty_Command, function(source, args)
 local name = GetPlayerName(source) --Gets The name of the player through the source
  if IsPlayerAceAllowed(source, emsduty) and has_value(people, name) then
   TriggerClientEvent('mythic_notify:client:SendAlert', source, { type = 'inform', text = 'You are now off-duty as EMS!'}) --make sure you have the mythic_notify resource @ https://github.com/JayMontana36/mythic_notify
